@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="appicon">icons/screenshot.png</file>
+        <file alias="selection">icons/selection.png</file>
+        <file alias="screen">icons/video-display.png</file>
+        <file alias="window">icons/window.png</file>
+        <file>about.html</file>
+        <file>translations/sqreenshot_it_IT.qm</file>
+    </qresource>
+</RCC>

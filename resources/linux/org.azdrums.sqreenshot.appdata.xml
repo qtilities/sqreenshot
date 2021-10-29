@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>org.azdrums.sqreenshot.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>Sqreenshot</name>
+  <summary>Simple screenshot tool</summary>
+  <content_rating type="oars-1.0" />
+
+  <description>
+    <p>Sqreenshot is a simple screenshot tool based on Gnome Screenshot.</p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main window</caption>
+      <image>https://github.com/redtide/sqreenshot/blob/master/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/redtide/sqreenshot/</url>
+
+  <provides>
+    <binary>sqreenshot</binary>
+  </provides>
+
+  <releases>
+    <!--release version="0.1.0" date="2022-MM-MM" /-->
+  </releases>
+</component>
