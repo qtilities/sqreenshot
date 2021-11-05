@@ -29,11 +29,13 @@ DESTDIR="$(pwd)/buildpackage" cmake --build build --target install
 - [Lightscreen][4]
 - [LXImage-Qt][5]
 - [Screengrab][6]
+- [ksnip][7]
 
 
 [1]: https://github.com/redtide/sqreenshot/actions/workflows/build.yml/badge.svg
 [2]: https://gitlab.gnome.org/GNOME/gnome-screenshot/
-[3]: https://github.com/flameshot-org/flameshot
-[4]: https://github.com/ckaiser/Lightscreen
+[3]: https://github.com/flameshot-org/flameshot/
+[4]: https://github.com/ckaiser/Lightscreen/
 [5]: https://github.com/lxqt/lximage-qt/
-[6]: https://github.com/lxqt/screengrab
+[6]: https://github.com/lxqt/screengrab/
+[7]: https://github.com/ksnip/ksnip/

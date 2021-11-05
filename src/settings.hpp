@@ -18,7 +18,7 @@
 */
 #pragma once
 
-#include <QStandardPaths>
+#include <QString>
 
 namespace azd {
 

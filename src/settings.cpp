@@ -20,6 +20,7 @@
 
 #include <QApplication>
 #include <QSettings>
+#include <QStandardPaths>
 
 namespace Default {
 QString directory = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
