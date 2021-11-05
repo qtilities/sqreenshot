@@ -39,7 +39,6 @@ public:
 
 private:
     void resizeEvent(QResizeEvent*) override;
-    void reject() override;
 
     void onSave();
     void updatePreview();

@@ -15,7 +15,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>281</width>
+     <width>300</width>
      <height>231</height>
     </rect>
    </property>
@@ -137,7 +137,8 @@
       <item>
        <widget class="QPushButton" name="btnHelp">
         <property name="icon">
-         <iconset theme="help-about"/>
+         <iconset theme="help-about">
+          <normaloff>.</normaloff>.</iconset>
         </property>
         <property name="autoDefault">
          <bool>false</bool>
@@ -147,7 +148,20 @@
       <item>
        <widget class="QDialogButtonBox" name="buttonBox">
         <property name="standardButtons">
-         <set>QDialogButtonBox::Close|QDialogButtonBox::Ok</set>
+         <set>QDialogButtonBox::Close</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnOk">
+        <property name="text">
+         <string>&amp;OK</string>
+        </property>
+        <property name="icon">
+         <iconset theme="gtk-ok"/>
+        </property>
+        <property name="default">
+         <bool>true</bool>
         </property>
        </widget>
       </item>

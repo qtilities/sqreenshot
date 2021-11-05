@@ -38,8 +38,10 @@ public:
     DialogMain(QWidget* parent = nullptr);
     ~DialogMain();
 
+signals:
+    void sigAccepted();
+
 private:
-    void accept() override;
     void onAboutClicked();
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
     void onButtonClicked(int);

@@ -18,7 +18,6 @@
 */
 #include "dialogmain.hpp"
 #include "./ui_dialogmain.h"
-#include "dialogscreenshot.hpp"
 #include "sqreenshot.hpp"
 #include "defs.hpp"
 
@@ -121,6 +120,8 @@ DialogMain::DialogMain(QWidget* parent)
     connect(ui->sbxDelay, QOverload<int>::of(&QSpinBox::valueChanged), this,
             [&](int value) { settings.setDelay(value); });
 
+    connect(ui->btnOk, &QAbstractButton::clicked, this, &DialogMain::sigAccepted);
+
     btnScreen->click();
     setLayout(ui->layout);
     setWindowIcon(QIcon(":appicon"));
@@ -130,12 +131,6 @@ DialogMain::DialogMain(QWidget* parent)
 DialogMain::~DialogMain()
 {
     delete ui;
-}
-
-void DialogMain::accept()
-{
-    // FIXME
-    accepted();
 }
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))

@@ -108,12 +108,6 @@ void DialogScreenShot::resizeEvent(QResizeEvent* event)
     QDialog::resizeEvent(event);
 }
 
-void DialogScreenShot::reject()
-{
-    hide();
-    QDialog::reject();
-}
-
 void DialogScreenShot::onSave()
 {
     Settings& settings = static_cast<Sqreenshot*>(qApp)->settings();

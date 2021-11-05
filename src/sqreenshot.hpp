@@ -35,8 +35,6 @@ public:
     Settings& settings() { return settings_; }
 
 private:
-    void grab();
-
     Settings settings_;
     DialogMain* dlgMain_;
     DialogScreenShot* dlgShot_;

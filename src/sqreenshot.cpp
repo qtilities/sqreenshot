@@ -41,8 +41,21 @@ Sqreenshot::Sqreenshot(int& argc, char** argv)
     connect(this, &QApplication::aboutToQuit, dlgShot_, &QObject::deleteLater);
     connect(this, &QApplication::aboutToQuit, this, [this]() { settings_.save(); });
 
-    connect(dlgMain_, &DialogMain::accepted, this, &Sqreenshot::grab);
-    connect(dlgShot_, &DialogScreenShot::rejected, dlgMain_, &DialogMain::show);
+    connect(dlgMain_, &DialogMain::sigAccepted, this, [=]() {
+        int delay = settings_.delay();
+        if (delay && settings_.region() != Region::Selection) // No need to wait for selection.
+            delay *= 1000;
+        else
+            delay = 400; // Minimum time to hide the dialog.
+
+        QTimer::singleShot(delay, dlgShot_, &DialogScreenShot::grab);
+        dlgMain_->hide();
+    });
+
+    connect(dlgShot_, &DialogScreenShot::rejected, this, [=]() {
+        dlgMain_->show();
+        dlgShot_->hide();
+    });
 
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
@@ -54,18 +67,6 @@ Sqreenshot::Sqreenshot(int& argc, char** argv)
         }
     }
     dlgMain_->show();
-}
-
-void Sqreenshot::grab()
-{
-    int delay = settings_.delay();
-    if (delay && settings_.region() != Region::Selection) // No need to wait for selection.
-        delay *= 1000;
-    else
-        delay = 400; // Minimum time to hide the dialog.
-
-    QTimer::singleShot(delay, dlgShot_, &DialogScreenShot::grab);
-    dlgMain_->hide();
 }
 
 int main(int argc, char* argv[])
